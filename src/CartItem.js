@@ -6,12 +6,38 @@ class CartItem extends React.Component{
         this.state={
           title:"Mobile Phone",
           price:99,
-          Sqty:1
+          qty:1
         }
         // this.increaseQty=this.increaseQty.bind(this);
     }
-    increaseQty=()=>{ // binds it to the class 
-        console.log(this);
+    increaseQty=()=>{ // binds it to the class
+        // this.strategy.qty+=1;
+        // console.log('this',this.state);
+        // setState form 1 (this is the object form)
+        // this.setState({
+        //     qty: this.state.qty+1
+        // });
+
+        // setState form 2 (this is the function form) if prev state req use this
+        this.setState((prevState)=>{
+            return {
+                qty: prevState.qty + 1
+            }
+        });    
+    }
+    decreaseQty=()=>{
+        this.setState((prevState)=>{
+            if(prevState.qty==0){
+                return {
+                    qty: 0
+                }
+            }
+            else{
+               return {
+                  qty:prevState.qty - 1
+            }
+         }
+        });
     }
     render(){
       const{title,price,qty}=this.state; 
@@ -37,7 +63,8 @@ class CartItem extends React.Component{
             <img
                alt="derease"
                className="action-icons"
-               src='https://cdn-icons-png.flaticon.com/512/992/992683.png'>
+               src='https://cdn-icons-png.flaticon.com/512/992/992683.png'
+               onClick={this.decreaseQty}>
             </img>
             
             <img
