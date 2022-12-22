@@ -1,16 +1,16 @@
 import React from 'react';
 
 class CartItem extends React.Component{
-    constructor(){
-        super();
-        this.state={
-          title:"Mobile Phone",
-          price:99,
-          qty:1
-        }
-        // this.increaseQty=this.increaseQty.bind(this);
-        // this.testing();
-    }
+    // constructor(){
+    //     super();
+    //     this.state={
+    //       title:"Mobile Phone",
+    //       price:99,
+    //       qty:1
+    //     }
+    //     // this.increaseQty=this.increaseQty.bind(this);
+    //     // this.testing();
+    // }
     // testing(){
     //     const promise = new Promise((resolve,reject)=>{
     //         setTimeout(() => {
@@ -56,7 +56,7 @@ class CartItem extends React.Component{
         });
     }
     render(){
-      const{title,price,qty}=this.state;
+      const{title,price,qty}=this.props.product;
     //   this.setState({qty: this.state.qty + 10}); 
       return(  
        <div className="cart-item">
@@ -64,7 +64,7 @@ class CartItem extends React.Component{
            <img style={styles.image}/>
         </div>
         <div className="right-block">
-            <div style={{ fontSize: 25}}>{this.state.title}</div>
+            <div style={{ fontSize: 25}}>{title}</div>
             <div style={{ color:'#777'}}>Rs {price}</div>
             <div style={{ color:'#777' }}>Qty: {qty}</div>
          <div className="cart-item-actions">
