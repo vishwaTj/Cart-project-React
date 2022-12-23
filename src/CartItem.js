@@ -1,6 +1,7 @@
 import React from 'react';
 
 class CartItem extends React.Component{
+// const CartItem=()=>{
     // constructor(){
     //     super();
     //     this.state={
@@ -99,7 +100,7 @@ class CartItem extends React.Component{
          </div>
        </div>
       );
-    }
+}
 }
 
 // we styles blocks by creating objects below
