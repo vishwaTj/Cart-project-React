@@ -21,4 +21,5 @@ class pol extends React.Component{
          )
     }
  }
+
  export default pol;
