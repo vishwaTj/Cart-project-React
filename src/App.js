@@ -79,6 +79,8 @@ class App extends React.Component {
       
       this.db
        .collection('products')
+      //  .where('price','<',2000)
+       .orderBy('price','asc')
        .onSnapshot((snapshot)=>{ // onSnapshot updates atomatically for every change done in  firebase just like setState
         console.log(snapshot);
 
